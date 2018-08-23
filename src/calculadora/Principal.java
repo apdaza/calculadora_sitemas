@@ -22,8 +22,25 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Calculadora c = new CalculadoraDecimal();
+        Calculadora c;
         Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Ingree la base que desea");
+        int base = sc.nextInt();
+        switch(base){
+            case 2:
+              c = new CalculadoraBinaria();
+              break;
+            case 8:
+                c = new CalculadoraOctal();
+                break;
+            case 10:
+                c = new CalculadoraDecimal();
+                break;
+            default:
+                c = new CalculadoraHexadecimal();
+                break;
+        }
         
         System.out.println("Ingrese un entero");
         c.setValor1(sc.next());
