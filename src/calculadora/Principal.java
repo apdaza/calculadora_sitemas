@@ -6,6 +6,10 @@
 package calculadora;
 
 import calculadora.logica.Calculadora;
+import calculadora.logica.CalculadoraBinaria;
+import calculadora.logica.CalculadoraDecimal;
+import calculadora.logica.CalculadoraHexadecimal;
+import calculadora.logica.CalculadoraOctal;
 import java.util.Scanner;
 
 /**
@@ -18,15 +22,15 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Calculadora c = new Calculadora();
+        Calculadora c = new CalculadoraDecimal();
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Ingrese un entero");
-        c.setValor1(sc.nextInt());
+        c.setValor1(sc.next());
         System.out.println("Ingrese otro entero");
-        c.setValor2(sc.nextInt());
+        c.setValor2(sc.next());
         c.sumar();
-        System.out.println(c.getValor1() + " + " + c.getValor2() + " = " + c.getResultado());
+        System.out.println(c.mostrarValor1() + " + " + c.mostrarValor2() + " = " + c.mostrarResultado());
     }
     
 }

@@ -9,6 +9,23 @@ package calculadora.logica;
  *
  * @author Estudiantes
  */
-public class CalculadoraHexadecimal {
+public class CalculadoraHexadecimal extends Calculadora{
+    public CalculadoraHexadecimal() {
+        this.base = 16;
+    }
     
+    @Override
+    public String mostrarResultado(){
+        return Integer.toHexString(super.getResultado());
+    }
+    
+    @Override
+    public String mostrarValor1() {
+        return Integer.toHexString(super.getValor1());
+    }
+
+    @Override
+    public String mostrarValor2() {
+        return Integer.toHexString(super.getValor2());
+    }
 }

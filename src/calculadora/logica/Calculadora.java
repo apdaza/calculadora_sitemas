@@ -9,10 +9,11 @@ package calculadora.logica;
  *
  * @author Estudiantes
  */
-public class Calculadora {
+public abstract class Calculadora {
     protected int valor1;
     protected int valor2;
     protected int resultado;
+    protected int base;
 
     public int getValor1() {
         return valor1;
@@ -36,6 +37,20 @@ public class Calculadora {
 
     public void setResultado(int resultado) {
         this.resultado = resultado;
+    }
+    
+    public abstract String mostrarResultado();
+    
+    public abstract String mostrarValor1();
+    
+    public abstract String mostrarValor2();
+    
+    public void setValor1(String valor){
+        this.setValor1(Integer.parseInt(valor, this.base));
+    }
+    
+    public void setValor2(String valor){
+        this.setValor2(Integer.parseInt(valor, this.base));
     }
     
     public void sumar(){

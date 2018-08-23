@@ -9,6 +9,23 @@ package calculadora.logica;
  *
  * @author Estudiantes
  */
-public class CalculadoraOctal {
+public class CalculadoraOctal extends Calculadora{
+    public CalculadoraOctal() {
+        this.base = 8;
+    }
     
+    @Override
+    public String mostrarResultado(){
+        return Integer.toOctalString(super.getResultado());
+    }
+    
+    @Override
+    public String mostrarValor1() {
+        return Integer.toOctalString(super.getValor1());
+    }
+
+    @Override
+    public String mostrarValor2() {
+        return Integer.toOctalString(super.getValor2());
+    }
 }
